@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 100% 'Fira Sans', sans-serif;
+  color: darken(#1d3557, 8);
+}
+
+$main-color: #e63946;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .app-title {
+    margin: 2.5rem 0 1rem;
+    animation: showUp 0.5s ease-in-out;
+
+    strong {
+      color: $main-color;
+    }
+  }
+
+  .empty-message {
+    opacity: 0.5;
+    animation: showUp 0.75s ease-in-out;
+  }
+
+  &.result {
+    text-align: center;
+
+    .result-percentage {
+      font-size: 8rem;
+    }
+
+    .result-message {
+      animation: showUp 0.5s ease-in-out;
+    }
+  }
+
+  &.user-info {
+    margin-top: 3rem;
+    animation: showUp 0.5s ease-in-out;
+
+    .input-container {
+      strong {
+        margin: 0 1rem;
+      }
+    }
+  }
+}
+
+input,
+button {
+  border: 0;
+  outline: 0;
+}
+
+input {
+  border: 1px solid #ccc;
+  padding: 0.75rem 1rem;
+}
+
+button {
+  cursor: pointer;
+  background: $main-color;
+  box-shadow: 5px 5px 15px rgba($main-color, 0.75);
+  margin-top: 2rem;
+  color: white;
+  padding: 1rem 3rem;
+  font-weight: 900;
+  letter-spacing: 0.25px;
+  transition: 0.2s ease-in-out;
+  animation: showUp 1s ease-in-out;
+
+  &:hover {
+    background: lighten($main-color, 8);
+  }
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
